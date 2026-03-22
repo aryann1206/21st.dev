@@ -71,4 +71,3 @@ export default defineConfig([
   },
 ])
 ```
-# 21st.dev
