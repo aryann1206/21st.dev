@@ -20,7 +20,7 @@ router.post("/generate", async (req, res) => {
         const result = await model.generateContent(`
             Return ONLY raw JSX.
             - No markdown
-            - No imports/exports
+            - make like you just need to copy paste in VS code and ready to render with in app component 
             - Single component
             - use tailwind only dont use raw css
             ${text}
