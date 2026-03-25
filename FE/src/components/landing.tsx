@@ -2,10 +2,10 @@ import { useState } from "react";
 import axios from 'axios';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 export const Landing = () => {
-
+    const [tab, setTab] = useState<"preview" | "code">("code");
     const [text, settext] = useState("");
     const [code, setcode] = useState("");
-    const [loading,setloading]=useState<boolean>(false);
+    const [loading, setloading] = useState<boolean>(false);
 
     return (
         <div className="flex h-screen bg-blue-900">
@@ -38,19 +38,26 @@ export const Landing = () => {
                     make a login page
                 </p>
                 <p onClick={() => settext("make a landing page")} className="border rounded border-black">
-                    mark a landing page
+                    make a landing page
                 </p>
                 <p onClick={() => settext("make a cart component")} className="border rounded border-black">
                     make a cart component
                 </p>
             </div>
-            <div className="w-[60%] bg-white text-center p-6 rounded shadow-md flex items-center justify-center">
-                {code == ""  ? "preview panel " : <CodeBlock code={code}></CodeBlock>}
-                {loading ? "loading......": ""}
+
+            <div id="middlecomponent" className="w-[60%] bg-white text-center p-6 rounded shadow-md flex flex-col">
+                <div>
+                    <button onClick={()=>setTab("code")} className="bg-blue-500 w-[50%]"> code</button>
+                    <button onClick={()=>setTab("preview")} className="bg-red-500 w-[50%]"> preview</button>
+                </div>
+                <div >
+                    {code == "" ? "preview panel " : tab=="code"? <CodeBlock code={code}></CodeBlock>:<iframe></iframe>}
+                    {loading ? "loading......" : ""}   </div>
+
             </div>
             <div className="w-[20%] bg-blue-200 flex items-center justify-center font-weight: 1000">
                 Gallery-comming soon
-            </div>
+            </div> 
         </div>
     );
 }
@@ -58,14 +65,20 @@ export const Landing = () => {
 
 function CodeBlock({ code }: { code: string }) {
     return (
-        <div className="h-250 mt-50 w-200 overflow-scroll bg-white text-center flex items-center justify-center">
-            <SyntaxHighlighter language="jsx">
-                {code}
-            </SyntaxHighlighter>
-            {/* <iframe
-  src="https://100xmobile.com"
-  className="w-full h-[500px] border"
-/> */}
-        </div>
+
+        <SyntaxHighlighter customStyle={{
+            height: "900px",
+            width: '100%',
+            margin: 0,
+            overflowY: "auto",
+            fontSize: "14px",
+        }} language="jsx">
+            {code}
+        </SyntaxHighlighter>
+        /* <iframe
+src="https://100xmobile.com"
+className="w-full h-[500px] border"
+/> */
+
     );
 }
