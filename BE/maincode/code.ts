@@ -6,6 +6,9 @@ const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash"
   });
 
+// { title: z string, code: z string, variant1Code: z string , variant2Code: z string, variant3Code: z string }
+
+
 router.post("/generate", async (req, res) => {
     try {
         let { text } = req.body;
@@ -23,6 +26,7 @@ router.post("/generate", async (req, res) => {
             - make like you just need to copy paste in VS code and ready to render with in app component 
             - Single component
             - use tailwind only dont use raw css
+            -give only the component to copy paste in return in my function dont give a function 
             ${text}
             `);     
             console.log("hyyyyyyyy  gcdugogcdoogcp")
