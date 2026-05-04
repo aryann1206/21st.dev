@@ -1,26 +1,70 @@
-/* src/index.css */
 @import "tailwindcss";
 
-@theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+/* ===== THEME TOKENS ===== */
+:root {
+  --color-bg: #0B0F1A;
+  --color-surface: #111827;
+  --color-elevated: #1F2937;
+  --color-primary: #00BD7D;
+  --color-text: #E5E7EB;
+  --color-muted: #9CA3AF;
+
+  --shadow-depth-1: 0 4px 12px rgba(0,0,0,0.25);
+  --shadow-depth-2: 0 10px 30px rgba(0,0,0,0.4);
+  --shadow-depth-3: 0 25px 60px rgba(0,0,0,0.6);
 }
 
 body {
   margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  perspective: 1200px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* custom scrollbar for dark theme */
+/* ===== SURFACES ===== */
+.surface {
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: var(--shadow-depth-1);
+  border-radius: 16px;
+}
+
+.elevated {
+  background: var(--color-elevated);
+  box-shadow: var(--shadow-depth-2);
+  border-radius: 20px;
+}
+
+/* ===== DEPTH EFFECT ===== */
+.depth-tilt {
+  transform: rotateX(4deg) rotateY(-4deg);
+  transition: transform 0.3s ease;
+}
+
+.depth-tilt:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+}
+
+/* ===== FOCUS ===== */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  background: #0B0F1A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a4a6a;
+  background: #2a2a3a;
   border-radius: 4px;
 }
