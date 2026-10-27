@@ -2,5 +2,6 @@ This is an AI-assisted frontend development tool that transforms natural languag
 
 
 
-<img width="1887" height="833" alt="Screenshot 2026-05-04 230830" src="https://github.com/user-attachments/assets/180baf15-7ed2-405c-8fb9-02aceea9da8f" />
-<img width="1866" height="737" alt="Screenshot 2026-05-04 230946" src="https://github.com/user-attachments/assets/5d6f6378-f122-47c4-a91e-609b5a284320" />
+<img width="1892" height="862" alt="Screenshot 2026-10-27 233930" src="https://github.com/user-attachments/assets/c7ae528d-3ace-47d9-9c3a-32947448c062" />
+<img width="1886" height="870" alt="Screenshot 2026-10-27 233853" src="https://github.com/user-attachments/assets/308ee5c0-cec0-43d5-9bea-e13fa7b6275f" />
+
