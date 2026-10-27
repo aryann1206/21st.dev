@@ -18,8 +18,6 @@ router.post("/generate", async (req, res) => {
             })
             return;
         }
-        console.log("hyyyyyyyy")
-        console.log(process.env.GEMINI_API_KEY);
         const result = await model.generateContent(`
             Return ONLY raw JSX.
             - No markdown
@@ -29,7 +27,6 @@ router.post("/generate", async (req, res) => {
             -give only the component to copy paste in return in my function dont give a function 
             ${text}
             `);     
-            console.log("hyyyyyyyy  gcdugogcdoogcp")
         const response = await result.response;
         const code = response.text();
 
